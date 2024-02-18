@@ -2,7 +2,10 @@
   "name": "@adaskothebeast/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "view:ang":"npx vite preview --outDir .reports/libs/anglib/html",
+    "view:rea":"npx vite preview --outDir .reports/libs/realib/html"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.2.1",
