@@ -1,0 +1,30 @@
+{
+  "name": "nodlib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nodlib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/nodlib",
+        "tsConfig": "libs/nodlib/tsconfig.lib.json",
+        "packageJson": "libs/nodlib/package.json",
+        "main": "libs/nodlib/src/index.ts",
+        "assets": ["libs/nodlib/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs nodlib {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "options": {
+        "config": "libs/nodlib/vite.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

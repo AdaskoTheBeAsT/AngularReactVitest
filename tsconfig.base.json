@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@adaskothebeast/anglib": ["libs/anglib/src/index.ts"],
+      "@adaskothebeast/nodlib": ["libs/nodlib/src/index.ts"],
       "@adaskothebeast/realib": ["libs/realib/src/index.ts"]
     }
   },
