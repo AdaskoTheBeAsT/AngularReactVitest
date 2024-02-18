@@ -21,6 +21,9 @@
         }
       },
       "defaultConfiguration": "production"
+    },
+    "test": {
+      "builder": "@analogjs/platform:vitest"
     }
   }
 }
