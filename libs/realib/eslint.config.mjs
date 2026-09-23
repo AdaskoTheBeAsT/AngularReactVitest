@@ -1,0 +1,27 @@
+import baseConfig from '../../eslint.config.mjs';
+import baseConfig1 from '../../eslint.base.config.mjs';
+import nx from '@nx/eslint-plugin';
+
+export default [
+  ...baseConfig,
+  ...baseConfig1,
+  ...nx.configs['flat/react'],
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    // Override or add rules here
+    rules: {},
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    // Override or add rules here
+    rules: {},
+  },
+  {
+    files: ['**/*.js', '**/*.jsx'],
+    // Override or add rules here
+    rules: {},
+  },
+  {
+    ignores: ['**/vite.config.*.timestamp*', '**/vitest.config.*.timestamp*'],
+  },
+];

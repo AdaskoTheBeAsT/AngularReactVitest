@@ -4,5 +4,20 @@
   "sourceRoot": "libs/realib/src",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "build":{
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/realib",
+        "configFile": "libs/realib/vite.config.ts"
+      },
+      "configurations": {
+        "production": {
+          "mode": "production",
+          "dev": false
+        }
+      }
+    }
+  }
 }

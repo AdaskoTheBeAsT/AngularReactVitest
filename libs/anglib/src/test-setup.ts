@@ -1,21 +1,13 @@
-// // @ts-expect-error https://thymikee.github.io/jest-preset-angular/docs/getting-started/test-environment
-// globalThis.ngJest = {
-//   testEnvironmentOptions: {
-//     errorOnUnknownElements: true,
-//     errorOnUnknownProperties: true,
-//   },
-// };
-// import 'jest-preset-angular/setup-jest';
-
-import '@analogjs/vite-plugin-angular/setup-vitest';
+import '@angular/compiler';
+import '@analogjs/vitest-angular/setup-zone';
 
 import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting,
-} from '@angular/platform-browser-dynamic/testing';
+  BrowserTestingModule,
+  platformBrowserTesting,
+} from '@angular/platform-browser/testing';
 import { getTestBed } from '@angular/core/testing';
 
 getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(),
+  BrowserTestingModule,
+  platformBrowserTesting(),
 );

@@ -18,12 +18,6 @@
     "publish": {
       "command": "node tools/scripts/publish.mjs nodlib {args.ver} {args.tag}",
       "dependsOn": ["build"]
-    },
-    "test": {
-      "executor": "@nrwl/vite:test",
-      "options": {
-        "config": "libs/nodlib/vite.config.ts"
-      }
     }
   },
   "tags": []

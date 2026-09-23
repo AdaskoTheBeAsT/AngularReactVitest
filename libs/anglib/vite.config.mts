@@ -8,8 +8,13 @@ const project = 'libs/anglib';
 const reportPath = `../../.reports/${project}/`;
 
 export default defineConfig(({ mode }) => ({
-  plugins: [angular()],
+  root: import.meta.dirname,
+  cacheDir: '../../node_modules/.vite/libs/anglib',
+  resolve: { tsconfigPaths: true },
+  plugins: [angular({ tsconfig: path.join(import.meta.dirname, 'tsconfig.spec.json') })],
   test: {
+    name: 'anglib',
+    watch: false,
     globals: true,
     setupFiles: ['src/test-setup.ts'],
     environment: 'jsdom',
@@ -31,7 +36,7 @@ export default defineConfig(({ mode }) => ({
       ],
     ],
     coverage: {
-      reportsDirectory: `${reportPath}html/coverage`,
+      reportsDirectory: `${reportPath}coverage`,
       provider: 'v8',
       enabled: true,
     },

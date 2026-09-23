@@ -1,9 +1,8 @@
-/* eslint-disable */
-export default {
+module.exports = {
   displayName: 'anglib',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/anglib',
+  coverageDirectory: '../../.reports/libs/anglib/jest/coverage',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
